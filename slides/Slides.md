@@ -32,94 +32,149 @@ style: |
   @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'
 ---
 
-# My Presentation
-![bg right](https://picsum.photos/800/600)
+# <!--fit-->Testing with<br/>Playwright
+## Chris Ayers
+![bg right](./img/playwright-logo.svg)
 
 ---
 
-<!-- Speaker Notes -->
-## Slide 1
+![bg left:40%](./img/portrait.png)
 
-- Item 1
-- Item 2
-- Item 3
-<!-- Can have multiple on a slide -->
+# Chris Ayers
+## Senior Customer Engineer<br>Microsoft
 
----
-
-## Slide 2
-<!-- Can also do a multiline
-comment that will show in notes -->
-
-![Image](https://picsum.photos/800/600)
+<i class="fa-brands fa-twitter"></i> Twitter : @Chris\_L\_Ayers
+<i class="fa-brands fa-mastodon"></i> Mastodon: @Chrisayers@hachyderm.io
+<i class="fa-brands fa-linkedin"></i> LinkedIn: [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
+<i class="fa fa-window-maximize"></i> Blog: [https://chris-ayers\.com/](https://chris-ayers.com/)
+<i class="fa-brands fa-github"></i> GitHub: [Codebytes](https://github.com/codebytes)
 
 ---
 
-## Slide 3
+# Agenda
 
-> This is a quote.
-
----
-
-## Slide 4
-
-| Column 1 | Column 2 |
-| -------- | -------- |
-| Item 1   | Item 2   |
-| Item 3   | Item 4   |
+- What is Playwright?
+- Benefits of Using Playwright
+- Setting up a React Project
+- Creating End-to-End Tests with Playwright
+- Integrating with Continuous Integration
 
 ---
 
-![bg opacity](https://picsum.photos/800/600?image=53)
-## Slide 5
+![bg right:40% fit](./img/playwright-logo.svg)
 
-<div class="columns">
-<div>
-
-## Left
-
-- 1
-- 2
-
-</div>
-<div>
-
-## Right
-
-- 3
-- 4
-
-</div>
-</div>
+# What is Playwright?
+- Open Source released by Microsoft in 2020
+- A Modern web test framework
+- Can test APIs
+- Works with Headless or Headed Browsers
+  - Chromium - Chrome/Edge
+  - Firefox
+  - WebKit
 
 ---
 
-## Slide 6
+# Language Support
 
-<i class="fa-brands fa-twitter"></i> Twitter: 
-<i class="fa-brands fa-mastodon"></i> Mastodon: 
-<i class="fa-brands fa-linkedin"></i> LinkedIn: 
-<i class="fa fa-window-maximize"></i> Blog: 
-<i class="fa-brands fa-github"></i> GitHub: 
-
----
-
-# <!--fit--> Large Text
+- Bindings for:
+  - Python
+  - Javascript/Typescript
+  - Java
+  - .NET
 
 ---
 
-<!-- Needed for mermaid, can be anywhere in file except frontmatter -->
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
-</script>
+# Benefits of Using Playwright
 
-# Mermaid
+---
 
-<div class="mermaid">
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-</div>
+# Reliable & Stable
+
+- Automatically waits for UI to be ready.
+- Handles dynamic content, animations, and AJAX requests gracefully.
+- Minimizes flaky tests.
+
+---
+
+# Mobile Emulation
+
+- Easily emulate various mobile devices.
+- Test responsiveness and mobile-specific features.
+- Ability to emulate location via geolocation
+
+---
+
+# Advanced Interactions
+
+- Network request interception.
+- Create custom scenarios (e.g., offline mode, slow network).
+
+---
+
+# Native Context Automation
+
+- Automate beyond the browser:
+  - Upload & download files
+  - Work with iframes and shadow DOM
+
+---
+
+# Fast Execution
+
+- Tests are executed swiftly, reducing waiting time.
+- Parallel test execution.
+- Optimal performance due to its architecture.
+
+---
+
+# Rich Tooling Ecosystem
+
+- VS Code Extension
+- Integrations with popular CI/CD services.
+- Compatible with multiple assertion libraries.
+
+---
+
+# Types of Testing
+
+---
+
+# End-to-End Testing
+
+- Validate the flow of an application as a user would.
+
+---
+
+# Snapshot Testing
+
+- Capture screenshots or page content.
+- Compare against known states to detect visual changes.
+
+---
+
+# Interaction Testing
+
+- Simulate user interactions like clicks, form inputs, and scrolls.
+
+---
+
+# Accessibility Testing
+
+- Evaluate your application's accessibility features.
+- Ensure it's user-friendly for all audiences.
+
+---
+
+# Performance Testing
+
+- Analyze page load times and rendering performance.
+- Identify bottlenecks and optimization opportunities.
+
+---
+
+# Testing takes time
+- is hard
+- takes time to learn
+- time to build
+- testing culture
+
