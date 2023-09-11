@@ -164,11 +164,18 @@ style: |
 # What is Playwright?
 - Open Source released by Microsoft in 2020
 - A Modern web test framework
-- Can test APIs
 - Works with Headless or Headed Browsers
   - Chromium - Chrome/Edge
   - Firefox
   - WebKit
+
+---
+
+|  | Playwright | Selenium | Cypress |
+|---|---|---|---|
+| Language Bindings | TypeScript/JavaScript, Python, Java, C# | C#, Java, JavaScript, Ruby, Python | JavaScript |
+| Browser support | Chromium, Firefox, Webkit | All major full browsers | Chrome, Edge, Firefox, Electron, uses playwright for webkit |
+
 
 ---
 
@@ -189,15 +196,6 @@ style: |
 - Language Bindings
 - Single Automation Protocol
 - Abstracts debugging protocols
-  - Native browser debugging protocols
-
----
-
-|  | Playwright | Selenium | Cypress |
-|---|---|---|---|
-| Language Bindings | TypeScript/JavaScript, Python, Java, C# | C#, Java, JavaScript, Ruby, Python | JavaScript |
-| Browser support | Chromium, Firefox, Webkit | All major full browsers | Chrome, Edge, Firefox, Electron |
-| Browser Control Technology | Debug Protocols | WebDriver Protocol | In-browser JavaScript |
 
 ---
 
@@ -241,6 +239,74 @@ style: |
 - Tests are executed swiftly, reducing waiting time.
 - Parallel test execution.
 - Optimal performance due to its architecture.
+- Isolation with Browser Contexts
+  
+---
+
+# Auto-Waiting
+
+| Action                 | Attached | Visible | Stable | Receives Events | Enabled | Editable |
+|---|----------|---------|--------|-----------------|---------|----------|
+| click                  | Yes      | Yes     | Yes    | Yes             | Yes     | -        |
+
+
+- element is Attached to the DOM
+- element is Visible
+- element is Stable, as in not animating or completed animation
+- element Receives Events, as in not obscured by other elements
+- element is Enabled
+
+#### See a full list of actions at: https://playwright.dev/docs/actionability
+
+</div>
+</div>
+
+--- 
+
+# Web-First Assertions
+
+<div class="columns">
+<div>
+
+- expect(locator).toBeAttached()
+- expect(locator).toBeChecked()
+- expect(locator).toBeDisabled()
+- expect(locator).toBeEditable()
+- expect(locator).toBeEmpty()
+- expect(locator).toBeEnabled()
+- expect(locator).toBeFocused()
+- expect(locator).toBeHidden()
+- expect(locator).toBeInViewport()
+- expect(locator).toBeVisible()
+- expect(locator).toContainText()
+- expect(locator).toHaveAttribute()
+
+</div>
+<div>
+
+- expect(locator).toHaveClass()
+- expect(locator).toHaveCount()
+- expect(locator).toHaveCSS()
+- expect(locator).toHaveId()
+- expect(locator).toHaveJSProperty()
+- expect(locator).toHaveScreenshot()
+- expect(locator).toHaveText()
+- expect(locator).toHaveValue()
+- expect(locator).toHaveValues()
+- expect(page).toHaveScreenshot()
+- expect(page).toHaveTitle()
+- expect(page).toHaveURL()
+- expect(response).toBeOK()
+
+</div>
+</div>
+
+---
+
+# Visual evidence
+
+- screenshot support
+- Video Recording
 
 ---
 
@@ -253,12 +319,20 @@ style: |
 ---
 
 # Playwright Extension
-![bg right](img/playwright-extension-marketplace.png)
+![bg right fit](img/playwright-extension-marketplace.png)
 
 ---
 
 # Integration with IDE Testing
 ![bg right fit](img/playwright-extension-testing.png)
+
+---
+
+# Codegen
+
+Playwright Test Generator is a GUI tool that helps you record Playwright tests
+
+![bg right fit](img/playwright-codegen.png)
 
 ---
 
