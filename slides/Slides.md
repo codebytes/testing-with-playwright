@@ -56,7 +56,6 @@ style: |
 - What is Testing?
 - What is Playwright?
 - Benefits of Using Playwright
-- Setting up a React Project
 - Creating End-to-End Tests with Playwright
 - Integrating with Continuous Integration
 
@@ -72,10 +71,10 @@ style: |
 
 ## Purpose
 
-- **Detect Errors**: Identify bugs and discrepancies before a product reaches end-users.
-- **Enhance Quality**: Deliver a reliable and efficient product.
-- **Reduce Costs**: Addressing defects early is often cheaper than remedying issues later.
-- **Increase User Satisfaction**: A well-tested product ensures a better user experience.
+- **Detect Errors**
+- **Enhance Quality**
+- **Reduce Costs**
+- **Increase User Satisfaction**
 
 ---
 
@@ -108,19 +107,6 @@ style: |
 
 ---
 
-# Snapshot Testing
-
-- Capture screenshots or page content.
-- Compare against known states to detect visual changes.
-
----
-
-# Interaction Testing
-
-- Simulate user interactions like clicks, form inputs, and scrolls.
-
----
-
 # Accessibility Testing
 
 - Evaluate your application's accessibility features.
@@ -128,10 +114,26 @@ style: |
 
 ---
 
-# Performance Testing
+# Visual Testing
 
-- Analyze page load times and rendering performance.
-- Identify bottlenecks and optimization opportunities.
+- Capture screenshots or page content.
+- Compare against known states to detect visual changes.
+
+---
+
+# Component Testing
+
+- In Preview
+- Unit Test individual components
+
+---
+
+# Testing Best Practices
+
+- Test user-visible behavior
+- Make tests as isolated as possible
+- Avoid testing third-party dependencies
+- Testing with a database if you can control the data
 
 ---
 
@@ -154,15 +156,6 @@ style: |
 
 </div>
 </div>
-
----
-
-# Testing Best Practices
-
-- Test user-visible behavior
-- Make tests as isolated as possible
-- Avoid testing third-party dependencies
-- Testing with a database
 
 ---
 
@@ -304,14 +297,17 @@ Join the waitlist for Microsoft Playwright Testing private preview
 • New Azure service for running Playwright tests.
 • Cloud enabled to run Playwright tests at scale.
 • High parallelization across operating system-browser combinations.
-• Get tests done much faster.
 • Speed up delivery of features without sacrificing quality.
-Private Preview
-To learn more about Microsoft Playwright Testing, refer to https://aka.ms/mpt/private-preview-blog.
+
+### Private Preview
+To learn more about Microsoft Playwright Testing, refer to:
+ https://aka.ms/mpt/private-preview-blog.
 
 ---
 
 # Questions?
+
+![bg right](img/owl.png)
 
 ---
 
@@ -321,10 +317,10 @@ To learn more about Microsoft Playwright Testing, refer to https://aka.ms/mpt/pr
 ## Resources
 
 #### GitHub Repo
-#### https://github.com/codebytes/testing-with-playwright
+[**https://github.com/codebytes/testing-with-playwright**](https://github.com/codebytes/testing-with-playwright)
 
 #### Playwright website
-#### https://playwright.dev/
+[**https://playwright.dev/**](https://playwright.dev/)
 
 </div>
 
