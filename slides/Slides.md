@@ -182,10 +182,6 @@ style: |
 
 ---
 
-![bg](img/sketchthedocs-intro.png)
-
----
-
 ![bg right:40% w:450](img/playwright-arch.drawio.png)
 
 # Playwright Architecture
@@ -256,6 +252,16 @@ style: |
 
 ---
 
+# Playwright Extension
+![bg right](img/playwright-extension-marketplace.png)
+
+---
+
+# Integration with IDE Testing
+![bg right fit](img/playwright-extension-testing.png)
+
+---
+
 # Playwright Best Practices
 
 - Use locators
@@ -284,6 +290,10 @@ style: |
 ---
 
 # DEMOS
+
+---
+
+![bg](img/sketchthedocs-intro.png)
 
 ---
 
