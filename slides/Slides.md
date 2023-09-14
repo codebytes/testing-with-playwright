@@ -67,14 +67,12 @@ style: |
 
 **Testing is** the ***systematic process*** of **verifying** and **validating** that a software application or system meets specified requirements and functions correctly.
 
----
-
-## Purpose
+<!-- ## Purpose
 
 - **Detect Errors**
 - **Enhance Quality**
 - **Reduce Costs**
-- **Increase User Satisfaction**
+- **Increase User Satisfaction** -->
 
 ---
 
@@ -83,57 +81,30 @@ style: |
 <div class="columns">
 <div>
 
-- Unit Testing
-- Integration Testing
-- System Testing
-- Acceptance Testing
+* Unit Testing
+* Integration Testing
+* System Testing
+* Acceptance Testing
 
 </div>
 <div>
 
-- End-to-End (E2E) Testing
-- Accessibility Testing
-- Visual Testing
-- Component Testing
+* End-to-End (E2E) Testing
+* Accessibility Testing
+* Visual Testing
+* Component Testing
 
 </div>
 </div>
 
 ---
 
-# End-to-End Testing
-
-- Validate the flow of an application as a user would.
-
----
-
-# Accessibility Testing
-
-- Evaluate your application's accessibility features.
-- Ensure it's user-friendly for all audiences.
-
----
-
-# Visual Testing
-
-- Capture screenshots or page content.
-- Compare against known states to detect visual changes.
-
----
-
-# Component Testing
-
-- In Preview
-- Unit Test individual components
-
----
-
-# Testing Best Practices
+# UI Testing Best Practices
 
 - Test user-visible behavior
-- Make tests as isolated as possible
+- Make tests as **isolated** as possible
 - Avoid testing third-party dependencies
-- Testing with a database if you can control the data
+- If you test with a database, **control** the data
 
 ---
 
@@ -150,32 +121,29 @@ style: |
 </div>
 <div>
 
-- Tests are **slow**
-- Tests are **brittle**
-- Tests are **flaky**
+* Tests are **slow**
+* Tests are **brittle**
+* Tests are **flaky**
 
 </div>
 </div>
+
+---
+
+# Lets try to make testing easier... with 
+![center](./img/playwright-logo.png)
 
 ---
 
 ![bg right:40% fit](./img/playwright-logo.svg)
 
 # What is Playwright?
-- Open Source released by Microsoft in 2020
+- ### **Open Source** released by Microsoft in 2020
 - A Modern web test framework
 - Works with Headless or Headed Browsers
   - Chromium - Chrome/Edge
   - Firefox
   - WebKit
-
----
-
-|  | Playwright | Selenium | Cypress |
-|---|---|---|---|
-| Language Bindings | TypeScript/JavaScript, Python, Java, C# | C#, Java, JavaScript, Ruby, Python | JavaScript |
-| Browser support | Chromium, Firefox, Webkit | All major full browsers | Chrome, Edge, Firefox, Electron, uses playwright for webkit |
-
 
 ---
 
@@ -189,7 +157,7 @@ style: |
 
 ---
 
-![bg right:40% w:450](img/playwright-arch.drawio.png)
+![bg right:40% w:450](img/playwright-arch.drawio.svg)
 
 # Playwright Architecture
 
@@ -208,6 +176,7 @@ style: |
 - Automatically waits for UI to be ready.
 - Handles dynamic content, animations, and AJAX requests gracefully.
 - Minimizes flaky tests.
+- Isolation with Browser Contexts
 
 ---
 
@@ -244,11 +213,7 @@ style: |
 ---
 
 # Auto-Waiting
-
-| Action                 | Attached | Visible | Stable | Receives Events | Enabled | Editable |
-|---|----------|---------|--------|-----------------|---------|----------|
-| click                  | Yes      | Yes     | Yes    | Yes             | Yes     | -        |
-
+For example, for *page.click()*, Playwright will ensure that:
 
 - element is Attached to the DOM
 - element is Visible
@@ -260,6 +225,20 @@ style: |
 
 </div>
 </div>
+
+---
+
+# Locators
+
+| Method | Description |
+|---|---|
+| `page.getByRole()` | Locate by explicit and implicit accessibility attributes. |
+| `page.getByText()` | Locate by text content. |
+| `page.getByLabel()` | Locate a form control by associated label's text. |
+| `page.getByPlaceholder()` | Locate an input by placeholder. |
+| `page.getByAltText()` | Locate an element, usually image, by its text alternative. |
+| `page.getByTitle()` | Locate an element by its title attribute. |
+| `page.getByTestId()` | Locate an element based on its data-testid attribute. |
 
 --- 
 
