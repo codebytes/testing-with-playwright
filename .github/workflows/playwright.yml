@@ -25,3 +25,14 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+    - name: Upload HTML report to Azure
+      shell: bash
+      run: |
+        REPORT_DIR='run-${{ github.run_id }}-${{ github.run_attempt }}'
+        azcopy cp --recursive "./playwright-report/*" "https://${{ secrets.STORAGE_ACCOUNT_NAME }}.blob.core.windows.net/\$web/$REPORT_DIR"
+        echo "::notice title=HTML report url::https://${{ secrets.STORAGE_ACCOUNT_NAME }}.z1.web.core.windows.net/$REPORT_DIR/index.html"
+      env:
+        AZCOPY_AUTO_LOGIN_TYPE: SPN
+        AZCOPY_SPA_APPLICATION_ID: '${{ secrets.AZCOPY_SPA_APPLICATION_ID }}'
+        AZCOPY_SPA_CLIENT_SECRET: '${{ secrets.AZCOPY_SPA_CLIENT_SECRET }}'
+        AZCOPY_TENANT_ID: '${{ secrets.AZCOPY_TENANT_ID }}'

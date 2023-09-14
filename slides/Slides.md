@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: custom-default
-footer: 'https://example.com'
+footer: 'https://chris-ayers.com'
 ---
 
 # <!--fit-->Testing with<br/>Playwright
@@ -53,18 +53,18 @@ footer: 'https://example.com'
 <div class="columns">
 <div>
 
-* Unit Testing
-* Integration Testing
-* System Testing
-* Acceptance Testing
+- Unit Testing
+- Integration Testing
+- System Testing
+- Acceptance Testing
 
 </div>
 <div>
 
-* End-to-End (E2E) Testing
-* Accessibility Testing
-* Visual Testing
-* Component Testing
+- End-to-End (E2E) Testing
+- Accessibility Testing
+- Visual Testing
+- Component Testing
 
 </div>
 </div>
@@ -217,16 +217,17 @@ For example, for *page.click()*, Playwright will ensure that:
 <style scoped>
 /* Reset table styling provided by theme */
 table, tr, td, th {
-  all: unset;
+  /* all: unset; */
 
   /* Override contextual styling */
-  border: 0 !important;
-  background: transparent !important;
+  /* border: 0 !important; */
+  /* background: transparent !important; */
+  font-size: 18px;
 }
 table { display: table; }
 tr { display: table-row; }
-td, th { display: table-cell; }
-
+td { display: table-cell; }
+th { display: none; }
 /* ...and layout freely :) */
 table {
   width: 100%;
@@ -236,7 +237,6 @@ td {
   vertical-align: middle;
 }
 </style>
-
 
 # Web-First Assertions
 
