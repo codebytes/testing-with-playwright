@@ -1,35 +1,7 @@
 ---
 marp: true
-theme: default
+theme: custom-default
 footer: 'https://example.com'
-style: |
-  .columns {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-  }
-  .columns3 {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-  } 
-  img[alt~="center"] {
-    display: block;
-    margin: 0 auto;
-  }
-  .fa-twitter { color: aqua; }
-  .fa-mastodon { color: purple; }
-  .fa-linkedin { color: blue; }
-  .fa-window-maximize { color: skyblue; }
-
-  svg[id^="mermaid-"] { 
-    min-width: 480px; 
-    max-width: 960px; 
-    min-height: 360px; 
-    max-height: 600px; 
-  }
-
-  @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'
 ---
 
 # <!--fit-->Testing with<br/>Playwright
@@ -240,45 +212,50 @@ For example, for *page.click()*, Playwright will ensure that:
 | `page.getByTitle()` | Locate an element by its title attribute. |
 | `page.getByTestId()` | Locate an element based on its data-testid attribute. |
 
---- 
+---
+
+<style scoped>
+/* Reset table styling provided by theme */
+table, tr, td, th {
+  all: unset;
+
+  /* Override contextual styling */
+  border: 0 !important;
+  background: transparent !important;
+}
+table { display: table; }
+tr { display: table-row; }
+td, th { display: table-cell; }
+
+/* ...and layout freely :) */
+table {
+  width: 100%;
+}
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+</style>
+
 
 # Web-First Assertions
 
-<div class="columns">
-<div>
+| | |
+|---|---|
+| expect(locator) | expect(locator/page/response) |
+| expect(locator).toBeAttached() | expect(locator).toHaveClass()            |
+| expect(locator).toBeChecked()  | expect(locator).toHaveCount()            |
+| expect(locator).toBeDisabled() | expect(locator).toHaveCSS()              |
+| expect(locator).toBeEditable() | expect(locator).toHaveId()               |
+| expect(locator).toBeEmpty()    | expect(locator).toHaveJSProperty()       |
+| expect(locator).toBeEnabled()  | expect(locator).toHaveScreenshot()       |
+| expect(locator).toBeFocused()  | expect(locator).toHaveText()             |
+| expect(locator).toBeHidden()   | expect(locator).toHaveValue()            |
+| expect(locator).toBeInViewport() | expect(locator).toHaveValues()         |
+| expect(locator).toBeVisible()  |  expect(page).toHaveTitle()          |
+| expect(locator).toContainText() | expect(page).toHaveURL()             |
+| expect(locator).toHaveAttribute() | expect(response).toBeOK()               |
 
-- expect(locator).toBeAttached()
-- expect(locator).toBeChecked()
-- expect(locator).toBeDisabled()
-- expect(locator).toBeEditable()
-- expect(locator).toBeEmpty()
-- expect(locator).toBeEnabled()
-- expect(locator).toBeFocused()
-- expect(locator).toBeHidden()
-- expect(locator).toBeInViewport()
-- expect(locator).toBeVisible()
-- expect(locator).toContainText()
-- expect(locator).toHaveAttribute()
-
-</div>
-<div>
-
-- expect(locator).toHaveClass()
-- expect(locator).toHaveCount()
-- expect(locator).toHaveCSS()
-- expect(locator).toHaveId()
-- expect(locator).toHaveJSProperty()
-- expect(locator).toHaveScreenshot()
-- expect(locator).toHaveText()
-- expect(locator).toHaveValue()
-- expect(locator).toHaveValues()
-- expect(page).toHaveScreenshot()
-- expect(page).toHaveTitle()
-- expect(page).toHaveURL()
-- expect(response).toBeOK()
-
-</div>
-</div>
 
 ---
 
