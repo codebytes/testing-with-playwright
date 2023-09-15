@@ -110,12 +110,12 @@ footer: 'https://chris-ayers.com'
 ![bg right:40% fit](./img/playwright-logo.svg)
 
 # What is Playwright?
-- ### **Open Source** released by Microsoft in 2020
+- ### **Open Source** released by <i class="fa-brands fa-microsoft"></i> Microsoft in 2020
 - A Modern web test framework
 - Works with Headless or Headed Browsers
-  - Chromium - Chrome/Edge
-  - Firefox
-  - WebKit
+  - <i class="fa-brands fa-chrome"></i> Chromium - Chrome/Edge
+  - <i class="fa-brands fa-firefox"></i> Firefox
+  - <i class="fa-brands fa-safari"></i> WebKit
 
 ---
 
@@ -152,11 +152,25 @@ footer: 'https://chris-ayers.com'
 
 ---
 
+# Browser Contexts
+
+Browser Contexts provide a way to operate multiple independent browser sessions.
+
+If a page opens another page, e.g. with a window.open call, the popup will belong to the parent page's browser context.
+
+![bg right 90%](img/playwright-browser-context.drawio.svg)
+
+---
+
 # Mobile Emulation
 
 - Easily emulate various mobile devices.
+  - Mobile Chrome
+  - Mobile Safari
+  - Emulate Viewports and Scale
 - Test responsiveness and mobile-specific features.
 - Ability to emulate location via geolocation
+![bg right](img/iphone-vs.-android-noborderco.jpg)
 
 ---
 
@@ -164,14 +178,38 @@ footer: 'https://chris-ayers.com'
 
 - Network request interception.
 - Create custom scenarios (e.g., offline mode, slow network).
+- API Mocking
+  - HAR file support
+
+![bg right fit](img/slow-internet.jpg)
 
 ---
 
 # Native Context Automation
 
+<div class="columns">
+<div>
+
 - Automate beyond the browser:
   - Upload & download files
   - Work with iframes and shadow DOM
+
+</div>
+<div>
+
+```ts
+// Get frame using the frame's name attribute
+const frame = page.frame('frame-login');
+
+// Get frame using frame's URL
+const frame = page.frame({ url: /.*domain.*/ });
+
+// Interact with the frame
+await frame.fill('#username-input', 'John');
+```
+
+</div>
+</div>
 
 ---
 
@@ -261,8 +299,22 @@ td {
 
 # Visual evidence
 
-- screenshot support
+<div class="columns">
+<div>
+
+- Screenshot support
 - Video Recording
+
+</div>
+<div>
+
+<video width="100%" autoplay loop muted>
+  <source src="./img/playwright-video.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+</div>
+</div>
 
 ---
 
@@ -289,6 +341,13 @@ td {
 Playwright Test Generator is a GUI tool that helps you record Playwright tests
 
 ![bg right fit](img/playwright-codegen.png)
+
+---
+
+# UI Mode
+Run tests and visually see how it runs
+
+![bg right fit](img/playwright-ui-mode.png)
 
 ---
 
@@ -320,14 +379,6 @@ Playwright Test Generator is a GUI tool that helps you record Playwright tests
 ---
 
 # DEMOS
-
----
-
-![bg](img/sketchthedocs-intro.png)
-
----
-
-![bg](img/playwright-cli.png)
 
 ---
 
@@ -376,3 +427,14 @@ To learn more about Microsoft Playwright Testing, refer to:
 
 </div>
 </div>
+
+---
+
+<!-- footer: '' -->
+
+![bg](img/sketchthedocs-intro.png)
+
+---
+<!-- footer: '' -->
+
+![bg](img/playwright-cli.png)

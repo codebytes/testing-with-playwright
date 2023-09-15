@@ -22,3 +22,9 @@ test('can add todos', async ({ page }) => {
   const updatedTodoItems = page.locator('li');
   await expect(updatedTodoItems).toHaveCount(3);
 });
+
+test('validate ui of todos', async ({ page }) => {
+  await page.goto('/');
+  await page.screenshot({ path: 'screenshot.png' });
+});
+
