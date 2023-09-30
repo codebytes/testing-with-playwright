@@ -42,5 +42,6 @@ jobs:
         azcliversion: 2.30.0
         inlineScript: |
           REPORT_DIR='run-${{ github.run_id }}-${{ github.run_attempt }}'
-          azcopy cp --recursive "./playwright-report/*" "https://${{ vars.STORAGE_ACCOUNT_NAME }}.blob.core.windows.net/\$web/$REPORT_DIR"
+          # azcopy cp --recursive "./playwright-report/*" "https://${{ vars.STORAGE_ACCOUNT_NAME }}.blob.core.windows.net/\$web/$REPORT_DIR"
+          az storage blob upload-batch -d "\$web/$REPORT_DIR" -s "./playwright-report/*"
           echo "::notice title=HTML report url::https://${{ vars.STORAGE_ACCOUNT_NAME }}.z13.web.core.windows.net/$REPORT_DIR/index.html"
