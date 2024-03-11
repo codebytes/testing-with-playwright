@@ -37,7 +37,7 @@ jobs:
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
     - name: Upload HTML report to Azure
-      uses: azure/CLI@v1
+      uses: azure/CLI@v2
       with:
         inlineScript: |
           REPORT_DIR='run-${{ github.run_id }}-${{ github.run_attempt }}'
