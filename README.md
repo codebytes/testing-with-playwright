@@ -5,7 +5,7 @@ This repository contains resources and demos for the talk "Testing with Playwrig
 ## Slides
 
 The slides for the talk can be found at:\
-[https://chris-ayers.com/testing-with-playwright/](https://chris-ayers.com/testing-with-playwright/)
+[https://chris-ayers.com/testing-with-playwright/](https://chris-ayers.com/testing-with-playwright/) 
 
 ## Repository Content
 
