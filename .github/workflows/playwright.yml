@@ -4,11 +4,6 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   test:
     timeout-minutes: 60
@@ -17,32 +12,16 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-        node-version: 18
+        node-version: lts/*
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test --trace on
+      run: npx playwright test
     - uses: actions/upload-artifact@v4
-      if: always()
+      if: ${{ !cancelled() }}
       with:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
-    - name: Azure Login
-      uses: azure/login@v2
-      with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-    - name: Upload HTML report to Azure
-      uses: azure/CLI@v2
-      with:
-        inlineScript: |
-          REPORT_DIR='run-${{ github.run_id }}-${{ github.run_attempt }}'
-          # azcopy cp --recursive "./playwright-report/*" "https://${{ vars.STORAGE_ACCOUNT_NAME }}.blob.core.windows.net/\$web/$REPORT_DIR"
-          az storage blob upload-batch -d "\$web/$REPORT_DIR" -s "./playwright-report"
-          echo "::notice title=HTML report url::https://${{ vars.STORAGE_ACCOUNT_NAME }}.z13.web.core.windows.net/$REPORT_DIR/index.html"
-      env:
-        AZURE_STORAGE_ACCOUNT: ${{ vars.STORAGE_ACCOUNT_NAME }}

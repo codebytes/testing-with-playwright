@@ -1,45 +1,84 @@
-import React, { useState } from 'react';
-import { TodoList } from './TodoList';
-import { AddTodoForm } from './AddTodoForm';
+import { useState, useEffect } from 'react'
+import './App.css'
 
-const initialTodos: Todo[] = [
-  {
-    text: 'Walk the dog',
-    complete: false,
-  },
-  {
-    text: 'Write app',
-    complete: true,
-  },
-];
+// Todo type definition
+interface Todo {
+  id: number;
+  text: string;
+  completed: boolean;
+}
 
 function App() {
-  const [todos, setTodos] = useState(initialTodos);
+  const [todos, setTodos] = useState<Todo[]>(() => {
+    // Load todos from local storage on initial render
+    const savedTodos = localStorage.getItem('todos');
+    if (savedTodos) {
+      return JSON.parse(savedTodos);
+    }
+    return [];
+  });
+  const [inputValue, setInputValue] = useState('');
 
-  const toggleTodo: ToggleTodo = (selectedTodo: Todo) => {
-    const newTodos = todos.map((todo) => {
-      if (todo === selectedTodo) {
-        return {
-          ...todo,
-          complete: !todo.complete,
-        };
-      }
-      return todo;
-    });
-    setTodos(newTodos);
+  // Save todos to local storage whenever they change
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
+  // Add a new todo
+  const addTodo = () => {
+    if (inputValue.trim() !== '') {
+      const newTodo: Todo = {
+        id: Date.now(),
+        text: inputValue,
+        completed: false,
+      };
+      setTodos([...todos, newTodo]);
+      setInputValue('');
+    }
   };
 
-  const addTodo: AddTodo = (text: string) => {
-    const newTodo = { text, complete: false };
-    setTodos([...todos, newTodo]);
+  // Toggle todo completion status
+  const toggleTodo = (id: number) => {
+    setTodos(
+      todos.map((todo) => 
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
+  // Delete a todo
+  const deleteTodo = (id: number) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
-    <>
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
-      <AddTodoForm addTodo={addTodo} />
-    </>
-  );
+    <div className="todo-app">
+      <h1>Todo App</h1>
+      <div className="add-todo">
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Add a new task..."
+          onKeyDown={(e) => e.key === 'Enter' && addTodo()}
+        />
+        <button onClick={addTodo}>Add</button>
+      </div>
+      <ul className="todo-list">
+        {todos.map((todo) => (
+          <li key={todo.id} className={todo.completed ? 'completed' : ''}>
+            <input
+              type="checkbox"
+              checked={todo.completed}
+              onChange={() => toggleTodo(todo.id)}
+            />
+            <span>{todo.text}</span>
+            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 }
 
-export default App;
+export default App
