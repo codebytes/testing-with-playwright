@@ -14,13 +14,13 @@ footer: 'https://chris-ayers.com'
 
 ## Chris Ayers
 
-### Senior Risk SRE<br>Azure CXP AzRel<br>Microsoft
+### Principal Software Engineer<br>Azure EngOps AzRel<br>Microsoft
 
 <i class="fa-brands fa-bluesky"></i> BlueSky: [@chris-ayers.com](https://bsky.app/profile/chris-ayers.com)
 <i class="fa-brands fa-linkedin"></i> LinkedIn: - [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
 <i class="fa fa-window-maximize"></i> Blog: [https://chris-ayers\.com/](https://chris-ayers.com/)
 <i class="fa-brands fa-github"></i> GitHub: [Codebytes](https://github.com/codebytes)
-<i class="fa-brands fa-mastodon"></i> Mastodon: @Chrisayers@hachyderm.io
+<i class="fa-brands fa-mastodon"></i> Mastodon: [@Chrisayers@hachyderm.io](https://hachyderm.io/@Chrisayers)
 ~~<i class="fa-brands fa-twitter"></i> Twitter: @Chris_L_Ayers~~
 
 ---
@@ -262,7 +262,7 @@ table, tr, td, th {
   /* Override contextual styling */
   /* border: 0 !important; */
   /* background: transparent !important; */
-  font-size: 18px;
+  font-size: 24px;
 }
 table { display: table; }
 tr { display: table-row; }
@@ -289,6 +289,20 @@ td {
 | expect(locator).toBeEditable() | expect(locator).toHaveId()               |
 | expect(locator).toBeEmpty()    | expect(locator).toHaveJSProperty()       |
 | expect(locator).toBeEnabled()  | expect(locator).toHaveScreenshot()       |
+
+---
+
+<style scoped>
+table { display: table; width: 100%; font-size: 24px; }
+th { display: none; }
+td { text-align: center; vertical-align: middle; }
+</style>
+
+# Web-First Assertions (continued)
+
+| | |
+|---|---|
+| expect(locator) | expect(locator/page/response) |
 | expect(locator).toBeFocused()  | expect(locator).toHaveText()             |
 | expect(locator).toBeHidden()   | expect(locator).toHaveValue()            |
 | expect(locator).toBeInViewport() | expect(locator).toHaveValues()         |
@@ -301,6 +315,14 @@ td {
 
 # Visual evidence
 
+<style scoped>
+.video-poster { display: none; }
+@media print {
+  video { display: none; }
+  .video-poster { display: block; width: 100%; }
+}
+</style>
+
 <div class="columns">
 <div>
 
@@ -310,10 +332,11 @@ td {
 </div>
 <div>
 
-<video width="100%" autoplay loop muted>
+<video width="100%" poster="./img/playwright-video-poster.png" autoplay loop muted>
   <source src="./img/playwright-video.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
+<img class="video-poster" src="./img/playwright-video-poster.png" alt="Still from the Playwright test recording" />
 
 </div>
 </div>
@@ -425,7 +448,7 @@ To learn more about Microsoft Playwright Testing, refer to:
 <i class="fa-brands fa-linkedin"></i> LinkedIn: - [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
 <i class="fa fa-window-maximize"></i> Blog: [https://chris-ayers\.com/](https://chris-ayers.com/)
 <i class="fa-brands fa-github"></i> GitHub: [Codebytes](https://github.com/codebytes)
-<i class="fa-brands fa-mastodon"></i> Mastodon: @Chrisayers@hachyderm.io
+<i class="fa-brands fa-mastodon"></i> Mastodon: [@Chrisayers@hachyderm.io](https://hachyderm.io/@Chrisayers)
 ~~<i class="fa-brands fa-twitter"></i> Twitter: @Chris_L_Ayers~~
 
 </div>
@@ -435,9 +458,9 @@ To learn more about Microsoft Playwright Testing, refer to:
 
 <!-- footer: '' -->
 
-![bg](img/sketchthedocs-intro.png)
+![bg fit](img/sketchthedocs-intro.png)
 
 ---
 <!-- footer: '' -->
 
-![bg](img/playwright-cli.png)
+![bg fit](img/playwright-cli.png)
